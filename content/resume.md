@@ -1,3 +1,7 @@
+---
+title: John Slowik - Software Engineer | Solutions Architect
+---
+
 # John Slowik's Resume
 ## Employment History
 #### September 2022 - Present

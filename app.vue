@@ -20,4 +20,14 @@
 <script setup lang="ts">
 import Navbar from "~/components/navbar.vue";
 import Footer from "~/components/footer.vue";
+
+useHead({
+  title: "John Slowik",
+  meta: [
+    {
+      name: "description",
+      content: "John Slowik | Software Engineer | Solutions Architect.",
+    },
+  ],
+});
 </script>

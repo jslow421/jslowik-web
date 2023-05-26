@@ -13,6 +13,9 @@ author: {
     }
 location: Wisconsin
 imageUrl: /img/blog/pexels-markus-spiske-177598.jpg
+head: {
+    title: Amazon CodeWhisperer | John Slowik - Software Engineer | Solutions Architect,
+}
 ---
 
 Caylent was gracious enough to allow me to write a primer on using Amazon CodeWhisperer. It was a good time and I
