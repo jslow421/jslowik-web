@@ -1,83 +1,79 @@
 <template>
-  <div>
-    <div class="">
-      <div class="">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          From the blog
-        </h2>
-        <p class="mt-2 text-lg leading-8 text-gray-600">
-          Read the things I've written and, for some reason, decided to put on
-          the internet.
-        </p>
-        <div class="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
-          <ContentList
-            path="/blog"
-            :query="query"
-            v-slot="{ list }"
-            class="content-list"
-            options="{sortBy(date, asc)}"
+  <main>
+    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+      From the blog
+    </h2>
+    <p class="mt-2 text-lg leading-8 text-gray-600">
+      Read the things I've written and, for some reason, decided to put on the
+      internet.
+    </p>
+    <div class="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
+      <ContentList
+        path="/blog"
+        :query="query"
+        v-slot="{ list }"
+        class="content-list"
+        options="{sortBy(date, asc)}"
+      >
+        <article
+          v-for="article in list"
+          :key="article._path"
+          class="relative isolate flex flex-col gap-8 lg:flex-row"
+        >
+          <div
+            class="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0"
           >
-            <article
-              v-for="article in list"
-              :key="article._path"
-              class="relative isolate flex flex-col gap-8 lg:flex-row"
-            >
-              <div
-                class="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0"
+            <img
+              :src="article.imageUrl"
+              alt=""
+              class="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"
+            />
+            <div
+              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+            />
+          </div>
+          <div>
+            <div class="flex items-center gap-x-4 text-xs">
+              <time :datetime="article.datetime" class="text-gray-500">{{
+                article.date
+              }}</time>
+            </div>
+            <div class="group relative max-w-xl">
+              <h3
+                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
               >
+                <NuxtLink :to="article._path">
+                  <span class="absolute inset-0" />
+                  {{ article.title }}
+                </NuxtLink>
+              </h3>
+              <p class="mt-5 text-sm leading-6 text-gray-600">
+                {{ article.description }}
+              </p>
+            </div>
+            <div class="mt-6 flex border-t border-gray-900/5 pt-6">
+              <div class="relative flex items-center gap-x-4">
                 <img
-                  :src="article.imageUrl"
+                  :src="article.author.imageUrl"
                   alt=""
-                  class="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"
+                  class="h-10 w-10 rounded-full bg-gray-50"
                 />
-                <div
-                  class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
-                />
-              </div>
-              <div>
-                <div class="flex items-center gap-x-4 text-xs">
-                  <time :datetime="article.datetime" class="text-gray-500">{{
-                    article.date
-                  }}</time>
-                </div>
-                <div class="group relative max-w-xl">
-                  <h3
-                    class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
-                  >
-                    <NuxtLink :to="article._path">
+                <div class="text-sm leading-6">
+                  <p class="font-semibold text-gray-900">
+                    <NuxtLink>
                       <span class="absolute inset-0" />
-                      {{ article.title }}
+                      {{ article.author.name }}
                     </NuxtLink>
-                  </h3>
-                  <p class="mt-5 text-sm leading-6 text-gray-600">
-                    {{ article.description }}
                   </p>
-                </div>
-                <div class="mt-6 flex border-t border-gray-900/5 pt-6">
-                  <div class="relative flex items-center gap-x-4">
-                    <img
-                      :src="article.author.imageUrl"
-                      alt=""
-                      class="h-10 w-10 rounded-full bg-gray-50"
-                    />
-                    <div class="text-sm leading-6">
-                      <p class="font-semibold text-gray-900">
-                        <NuxtLink>
-                          <span class="absolute inset-0" />
-                          {{ article.author.name }}
-                        </NuxtLink>
-                      </p>
-                      <p class="text-gray-600">{{ article.author.role }}</p>
-                    </div>
-                  </div>
+                  <p class="text-gray-600">{{ article.author.role }}</p>
                 </div>
               </div>
-            </article>
-          </ContentList>
-        </div>
-      </div>
+            </div>
+          </div>
+        </article>
+      </ContentList>
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">
