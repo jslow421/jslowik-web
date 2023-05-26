@@ -18,4 +18,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: '.ouput/public'
+  base-directory: '.output/public'
