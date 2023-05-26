@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>My Resume</h1>
+  <div class="prose">
+    <ContentDoc />
   </div>
 </template>
 <script setup lang="ts"></script>
