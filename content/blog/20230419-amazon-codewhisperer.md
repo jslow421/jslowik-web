@@ -12,7 +12,7 @@ author: {
     role: Software Engineer
     }
 location: Wisconsin
-imageUrl: /img/blog/pexels-markus-spiske-177598.jpg
+imageUrl: /img/blog/tech.jpg
 head: {
     title: Amazon CodeWhisperer | John Slowik - Software Engineer | Solutions Architect,
 }
