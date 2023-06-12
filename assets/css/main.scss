@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a[target="_blank"] {
+    &:not(.footer-link) {
+      &:after {
+        content: url("/img/external.svg");
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+      }
+    }
+  }
