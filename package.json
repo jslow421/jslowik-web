@@ -2,23 +2,23 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "PORT=3001 nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "preinstall": "npx only-allow pnpm"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.6.0",
-    "@tailwindcss/typography": "^0.5.9",
-    "@types/node": "^18.15.12",
-    "autoprefixer": "^10.4.14",
-    "nuxt": "^3.5.1",
-    "postcss": "^8.4.23",
-    "sass": "^1.62.1",
-    "tailwindcss": "^3.3.2"
+    "@nuxt/content": "^2.9.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^18.18.8",
+    "autoprefixer": "^10.4.16",
+    "nuxt": "^3.8.0",
+    "postcss": "^8.4.31",
+    "sass": "^1.69.5",
+    "tailwindcss": "^3.3.5"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.7.13",
+    "@headlessui/vue": "^1.7.16",
     "@heroicons/vue": "^2.0.18"
   }
 }
