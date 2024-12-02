@@ -19,6 +19,6 @@ head: {
 ---
 
 Caylent was gracious enough to allow me to write a primer on using Amazon CodeWhisperer. It was a good time and I
-hope you enjoy it. You can find it [here](https://caylent.com/blog/aws/amazon-codewhisperer){:target="_blank"}
+hope you enjoy it. You can find it [here](https://dev.to/jslow421/amazon-codewhisperer-demo-315b){:target="_blank"}
 
 Let me know what you think!

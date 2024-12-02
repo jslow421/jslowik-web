@@ -5,7 +5,7 @@ title: John Slowik - Software Engineer | Solutions Architect
 # John Slowik's Resume
 ## Employment History
 #### September 2022 - Present
-Caylent - Senior Cloud Software Engineer
+Caylent - Cloud Software Architect
 ___
 
 #### November 2021 - September 2022
