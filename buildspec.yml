@@ -3,6 +3,17 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - |
+        # Check if only copilot or claude files changed
+        CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD 2>/dev/null || echo "")
+        if [ -n "$CHANGED_FILES" ]; then
+          # Filter out copilot and claude files
+          FILTERED_FILES=$(echo "$CHANGED_FILES" | grep -v -E "^\.github/copilot-instructions\.md$|^CLAUDE\.md$" || true)
+          if [ -z "$FILTERED_FILES" ]; then
+            echo "Only documentation files changed, skipping build"
+            exit 0
+          fi
+        fi
       - node --version
       - npm --version
       - npm install -g pnpm
