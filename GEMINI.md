@@ -7,7 +7,7 @@ Personal website built with Nuxt 3, featuring a blog and portfolio. Uses static 
 - **Framework**: Nuxt 3 (SSR enabled)
 - **Styling**: Tailwind CSS + SCSS
 - **Content**: @nuxt/content (markdown-based)
-- **Package Manager**: pnpm (enforced via preinstall hook)
+- **Package Manager**: npm
 - **UI Components**: HeadlessUI Vue + Heroicons
 - **Deployment**: AWS (CodeBuild → S3 → CloudFront)
 
@@ -65,7 +65,7 @@ Main navigation items (components/navbar.vue:79-84):
 - **Build Commands**: See buildspec.yml for complete pipeline
 
 ## Development Best Practices
-1. **Package Management**: Always use pnpm (enforced by preinstall hook)
+1. **Package Management**: Always use npm
 2. **Content**: Use markdown files in `/content/` for blog posts and pages
 3. **Styling**: Follow existing Tailwind patterns, use custom CSS variables
 4. **Components**: Stick to HeadlessUI + Heroicons for consistency
