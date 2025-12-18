@@ -2,18 +2,10 @@ import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
 export default defineContentConfig({
   collections: {
-    docs: defineCollection({
-      source: 'docs/**',
-      type: 'page'
-    }),
-    posts: defineCollection({
-      source: 'blog/**',
-      type: 'page',
-      // You can define a schema for frontmatter validation
-      schema: z.object({
-        date: z.string(),
-        tags: z.array(z.string())
-      })
+    // "content" is the default collection name used for basic setups
+    content: defineCollection({
+      type: 'page', // 'page' for routing, 'data' for json/yaml data
+      source: '**/*.md' // Look for all markdown files
     })
   }
 })

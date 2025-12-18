@@ -10,6 +10,7 @@
     <div class="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
       <ContentList
         path="/blog"
+        queryContent="data"
         v-slot="{ list }"
         class="content-list"
         options="{sortBy(date, asc)}"
@@ -75,7 +76,14 @@
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  const { data } = await useAsyncData('home', () => 
+  queryCollection('content') // Matches the key in content.config.ts
+    .path('/blog')         // Optional: filter by path
+    .limit(5)
+    .all()                 // .find() is now .all() or .first()
+)
+</script>
 <style lang="scss">
 h2 {
   margin-bottom: 0;
