@@ -74,7 +74,7 @@
     .where('path', 'LIKE', '/blog/%')
     .where('path', 'NOT LIKE', '/blog/.%')
     .order('date', 'DESC')
-    .limit(5)
+    .limit(50)
     .all()
 )
 </script>
