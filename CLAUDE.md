@@ -7,7 +7,7 @@ Personal website built with Nuxt 3, featuring a blog and portfolio. Uses static 
 - **Framework**: Nuxt 3 (SSR enabled)
 - **Styling**: Tailwind CSS + SCSS
 - **Content**: @nuxt/content (markdown-based)
-- **Package Manager**: pnpm (enforced via preinstall hook)
+- **Package Manager**: npm
 - **UI Components**: HeadlessUI Vue + Heroicons
 - **Deployment**: AWS (CodeBuild → S3 → CloudFront)
 
@@ -23,10 +23,10 @@ Personal website built with Nuxt 3, featuring a blog and portfolio. Uses static 
 ```
 
 ## Development Commands
-- `pnpm dev` - Start development server
-- `pnpm build` - Build for production
-- `pnpm generate` - Generate static site
-- `pnpm preview` - Preview generated site
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run generate` - Generate static site
+- `npm run preview` - Preview generated site
 
 ## Content Management
 - Content stored in `/content/` directory as markdown files
@@ -59,18 +59,18 @@ Main navigation items (components/navbar.vue:79-84):
 - Blog (/blog)
 
 ## AWS Deployment
-- **Build Process**: Uses pnpm, runs `pnpm generate`
+- **Build Process**: Uses npm, runs `npm run generate`
 - **Artifacts**: Static files from `.output/public`
 - **CloudFront**: Distribution ID EY95NWP6MYHW0 (invalidated on deploy)
 - **Build Commands**: See buildspec.yml for complete pipeline
 
 ## Development Best Practices
-1. **Package Management**: Always use pnpm (enforced by preinstall hook)
+1. **Package Management**: Always use npm
 2. **Content**: Use markdown files in `/content/` for blog posts and pages
 3. **Styling**: Follow existing Tailwind patterns, use custom CSS variables
 4. **Components**: Stick to HeadlessUI + Heroicons for consistency
 5. **TypeScript**: Maintain type safety throughout
-6. **Static Generation**: Use `pnpm generate` for production builds
+6. **Static Generation**: Use `npm run generate` for production builds
 
 ## File Naming Conventions
 - Vue components: lowercase with dashes (navbar.vue, footer.vue)
