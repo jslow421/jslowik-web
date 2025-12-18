@@ -20,9 +20,11 @@
 				</div>
 				<div>
 					<div class="flex items-center gap-x-4 text-xs">
-						<time :datetime="new Date(article.date).toISOString()" class="text-gray-500">{{
-							new Date(article.date).toLocaleDateString()
-						}}</time>
+						<time
+							:datetime="article.date ? new Date(article.date).toISOString() : ''"
+							class="text-gray-500"
+							>{{ article.date ? new Date(article.date).toLocaleDateString() : "No date" }}</time
+						>
 					</div>
 					<div class="group relative max-w-xl">
 						<h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
