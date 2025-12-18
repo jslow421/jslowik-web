@@ -72,6 +72,7 @@
   const { data } = await useAsyncData('blog-list', () => 
   queryCollection('content')
     .where('path', 'LIKE', '/blog/%')
+    .where('path', 'NOT LIKE', '/blog/.%')
     .order('date', 'DESC')
     .limit(5)
     .all()
