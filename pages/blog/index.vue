@@ -10,7 +10,6 @@
     <div class="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
       <ContentList
         path="/blog"
-        :query="query"
         v-slot="{ list }"
         class="content-list"
         options="{sortBy(date, asc)}"
@@ -76,15 +75,7 @@
   </main>
 </template>
 
-<script setup lang="ts">
-import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types";
-const query: QueryBuilderParams = {
-  path: "/blog",
-  where: [{ date: { $exists: true } }],
-  limit: 50,
-  sort: [{ date: -1 }],
-};
-</script>
+<script setup lang="ts"></script>
 <style lang="scss">
 h2 {
   margin-bottom: 0;
