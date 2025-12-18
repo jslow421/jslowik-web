@@ -27,7 +27,7 @@
         </div>
         <div>
           <div class="flex items-center gap-x-4 text-xs">
-            <time :datetime="article.date" class="text-gray-500">{{
+            <time :datetime="new Date(article.date).toISOString()" class="text-gray-500">{{
               new Date(article.date).toLocaleDateString()
             }}</time>
           </div>
@@ -69,11 +69,12 @@
 </template>
 
 <script setup lang="ts">
-  const { data } = await useAsyncData('home', () => 
-  queryCollection('content') // Matches the key in content.config.ts
-    .path('/blog')         // Optional: filter by path
+  const { data } = await useAsyncData('blog-list', () => 
+  queryCollection('content')
+    .where('path', 'LIKE', '/blog/%')
+    .order('date', 'DESC')
     .limit(5)
-    .all()                 // .find() is now .all() or .first()
+    .all()
 )
 </script>
 <style lang="scss">
