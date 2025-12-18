@@ -1,6 +1,6 @@
 <template>
   <div class="prose">
-    <ContentDoc />
+    <ContentRenderer v-if="page" :value="page" />
   </div>
   <div
     data-iframe-width="150"
@@ -10,6 +10,11 @@
   ></div>
 </template>
 <script setup lang="ts">
+const route = useRoute()
+const { data: page } = await useAsyncData(route.path, () => {
+  return queryCollection('content').path(route.path).first()
+})
+
 onMounted(async () => {
   let credlyScript = document.createElement("script");
   credlyScript.setAttribute(
