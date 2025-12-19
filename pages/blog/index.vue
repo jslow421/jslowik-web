@@ -1,7 +1,7 @@
 <template>
 	<main>
-		<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">From the blog</h2>
-		<p class="mt-2 text-lg leading-8 text-gray-600">
+		<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">From the blog</h2>
+		<p class="mt-2 text-lg leading-8 text-gray-300">
 			Read the things I've written and, for some reason, decided to put on the internet.
 		</p>
 		<div class="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
@@ -14,40 +14,40 @@
 					<img
 						:src="article.imageUrl"
 						alt=""
-						class="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"
+						class="absolute inset-0 h-full w-full rounded-2xl bg-gray-800 object-cover"
 					/>
-					<div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+					<div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
 				</div>
 				<div>
 					<div class="flex items-center gap-x-4 text-xs">
 						<time
 							:datetime="article.date ? new Date(article.date).toISOString() : ''"
-							class="text-gray-500"
+							class="text-gray-400"
 							>{{ article.date ? new Date(article.date).toLocaleDateString() : "No date" }}</time
 						>
 					</div>
 					<div class="group relative max-w-xl">
-						<h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+						<h3 class="mt-3 text-lg font-semibold leading-6 text-white group-hover:text-gray-300">
 							<NuxtLink :to="article.path">
 								<span class="absolute inset-0" />
 								{{ article.title }}
 							</NuxtLink>
 						</h3>
-						<p class="mt-5 text-sm leading-6 text-gray-600">
+						<p class="mt-5 text-sm leading-6 text-gray-300">
 							{{ article.description }}
 						</p>
 					</div>
-					<div class="mt-6 flex border-t border-gray-900/5 pt-6">
+					<div class="mt-6 flex border-t border-white/10 pt-6">
 						<div class="relative flex items-center gap-x-4">
-							<img :src="article.author?.imageUrl" alt="" class="h-10 w-10 rounded-full bg-gray-50" />
+							<img :src="article.author?.imageUrl" alt="" class="h-10 w-10 rounded-full bg-gray-800" />
 							<div class="text-sm leading-6">
-								<p class="font-semibold text-gray-900">
+								<p class="font-semibold text-white">
 									<NuxtLink>
 										<span class="absolute inset-0" />
 										{{ article.author?.name }}
 									</NuxtLink>
 								</p>
-								<p class="text-gray-600">{{ article.author?.role }}</p>
+								<p class="text-gray-400">{{ article.author?.role }}</p>
 							</div>
 						</div>
 					</div>
