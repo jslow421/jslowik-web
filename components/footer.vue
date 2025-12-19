@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-white w-screen">
+  <footer class="bg-primary w-screen">
     <div
       class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8"
     >
@@ -9,14 +9,14 @@
           :key="item.name"
           :href="item.href"
           target="_blank"
-          class="text-gray-400 hover:text-gray-500 footer-link"
+          class="text-gray-400 hover:text-gray-300 footer-link"
         >
           <span class="sr-only">{{ item.name }}</span>
           <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
         </a>
       </div>
       <div class="mt-8 md:order-1 md:mt-0">
-        <p class="text-center text-xs leading-5 text-gray-500">
+        <p class="text-center text-xs leading-5 text-gray-400">
           &copy; {{ currentYear }} John Slowik. All rights reserved.
         </p>
       </div>

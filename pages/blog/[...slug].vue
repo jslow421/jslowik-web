@@ -1,5 +1,5 @@
 <template>
-	<div class="prose prose-zinc">
+	<div class="prose prose-zinc prose-invert">
 		<ContentRenderer v-if="post" :value="post" />
 		<div v-else>Post not found</div>
 	</div>

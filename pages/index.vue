@@ -1,5 +1,5 @@
 <template>
-  <div class="prose">
+  <div class="prose prose-invert">
     <ContentRenderer v-if="page" :value="page" />
   </div>
   <div
