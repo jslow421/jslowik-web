@@ -18,8 +18,6 @@ const { data: page } = await useAsyncData(route.path, () => {
 });
 
 onMounted(async () => {
-	let credlyScript = document.createElement("script");
-	credlyScript.setAttribute("src", "https://cdn.credly.com/assets/utilities/embed.js");
-	document.head.appendChild(credlyScript);
+	// Null
 });
 </script>
